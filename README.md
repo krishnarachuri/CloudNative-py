@@ -1,55 +1,62 @@
-<h1 align="center">
-🌐 Cloud Native Web Application
-</h1>
+<h1 align="center">Webapp<h1>
 
-### Built With
-- ![gcp](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
-- ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
-- ![Packer](https://img.shields.io/badge/packer-%23E7EEF0.svg?style=for-the-badge&logo=packer&logoColor=%2302A8EF)
-- ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-- ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
-- ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
-- ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
-- ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+## Prerequisites
 
-### Architecture Diagram
+Before you begin, ensure you have met the following requirements:
 
-![test drawio](https://github.com/chebrolusai/DocBook/assets/144749543/65d55fcf-fbfa-4c21-b471-f563c67a2bc6)
+- Python installed
+- PIP installed
+- mysql set up
 
-### 🚀 Project Overview 
+##### For a Virtual Machine
 
-This project is a comprehensive demonstration of cloud application development and deployment, emphasizing robust security, availability and scalability:
+Run the following command to set up all the prerequisites required for the application.
 
-- RESTful Application Development & Enhanced CI:
-     - Developed a scalable RESTful application, with Continuous Integration via GitHub Actions ensuring code reliability and quality
-     - Integrated detailed logging and metrics for effective monitoring and performance analysis
-- Application Scaling and Event-Driven Architecture:
-     - Implemented AutoScaling for dynamic capacity management targetting CPU utilization
-     - Used Google Cloud Pub/Sub for an efficient, event driven architecture
-- Robust Infrastructure Deployment with Security:
-     - Deployed a secure GCP infrastructure, with a focus on network and resource isolation
-     - Utilized IAM roles and security groups to enforce strict access controls and security best practices
-     - Configured the Application Load Balancer to only accept HTTPS requests, enhancing data security in transit, with SSL/TLS certificates managed through GCP managed Certificate
-     - Employed Cloud DNS for reliable domain registration and DNS management
-- Cloud Functions for Automation:
-     - Integrated GCP Cloud functions for automated responses to specific events, streamlining operations and increasing efficiency
-- Encryption
-     - Used Customer Managed Encryption Keys to manage encryption for the Cloud Database, Instance Templates and Bucket Storage
+```sh
+./installations.sh
+```
 
-### ☁️ List of Cloud services used:
-- 🌐 VPC (Virtual private cloud)
-- ⚖️ External Application Load Balancer (ALB)
-- ⚖️ Auto Scaler for Managed Group Instances (MIG)
-- 🔍 Ops Agent (Logs and metrics)
-- 🔑 Cloud Key Management Service
-- ☁️  Cloud DNS
-- 💻 Virtual Machines
-- 🗄️ Cloud SQL
+Running this script will set up
 
-### 🛠️ Code
-- For more specific implementation details, visit the repos :
+- Python
+- PIP
+- MariaDB
+- unzip
+- A directory named demo with .env file
+- start the MariaDB server
 
-- Application and REST APIs : https://github.com/CloudNative-py/webapp
-- Infrastructure: https://github.com/CloudNative-py/-tf-gcp-infra
-- Cloud Function: https://github.com/CloudNative-py/serverless_main
+## Intructions
 
+1. Clone the repo
+2. Navigate to the repo
+   ```sh
+   cd your-flask-app
+   ```
+3. setup the .env file with the following
+   ```sh
+   DB_USER=<user>
+   DB_PASSWORD=<your_password>
+   DB_HOST=<host>
+   DB_PORT=3306
+   DB_NAME=<your_db_name>
+   ```
+4. To install everything else required for the application to run, do the following in the directory
+
+   ```sh
+   pip3 install -r requirements.txt
+   ```
+
+   It installs all the following
+
+   - Flask
+   - Flask-SQLAlchemy
+   - pymysql
+   - python-dotenv
+   - flask-bcrypt
+   - pytest
+
+5. Once this is done, run this command to start the application
+   ```sh
+   python3 main.py
+   ```
+   

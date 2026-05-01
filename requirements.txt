@@ -1,0 +1,8 @@
+Flask
+Flask-SQLAlchemy
+pymysql
+python-dotenv
+flask-bcrypt
+pytest
+google-cloud-pubsub
+cryptography
